@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f5f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    header h1 a:hover {
+      color: #d4ffd9;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4ffd9;
+    }
+
+    main {
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    form label {
+      font-size: 16px;
+      margin-bottom: 8px;
+      display: block;
+      color: #4CAF50;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    form textarea {
+      resize: vertical;
+    }
+
+    form button {
+      padding: 12px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+    }
+
+    /* ✅ Media Queries for Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 16px;
+      }
+
+      main {
+        padding: 20px 15px;
+      }
+
+      form {
+        padding: 15px;
+      }
+
+      form input,
+      form textarea {
+        font-size: 14px;
+        padding: 8px;
+      }
+
+      form button {
+        font-size: 14px;
+        padding: 10px 16px;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="home.html">Welcome to My Website</a></h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <main>
+    <form action="mailto:example@example.com" method="post" enctype="text/plain">
+      <label>Name:</label>
+      <input type="text" placeholder="Enter your name" required />
+      <label>Email:</label>
+      <input type="email" placeholder="Enter your email" required />
+      <label>Message:</label>
+      <textarea rows="5" placeholder="Your message..." required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Website</p>
+  </footer>
+</body>
+</html>

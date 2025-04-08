@@ -1,0 +1,236 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f5f4;
+        color: #333;
+      }
+  
+      header {
+        background-color: #4CAF50;
+        padding: 20px;
+        text-align: center;
+      }
+  
+      header h1 a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+  
+      header h1 a:hover {
+        color: #d4ffd9;
+      }
+  
+      nav {
+        margin-top: 10px;
+      }
+  
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+  
+      nav a:hover {
+        color: #d4ffd9;
+      }
+  
+      .hero {
+        background-color: #2e7d32;
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      }
+  
+      .hero h2 {
+        font-size: 36px;
+        margin-bottom: 20px;
+      }
+  
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 30px;
+      }
+  
+      .hero button {
+        background-color: #ffffff;
+        color: #2e7d32;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+  
+      .hero button:hover {
+        background-color: #d4ffd9;
+        color: #1b5e20;
+      }
+  
+      .carousel-container {
+        overflow: hidden;
+        position: relative;
+        max-width: 100%;
+        margin: 40px auto;
+      }
+  
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+  
+      .carousel-card {
+        min-width: 100%;
+        box-sizing: border-box;
+        background: #e8fff0;
+        padding: 30px;
+        border-radius: 12px;
+        margin: 0 auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+  
+      .carousel-card h2 {
+        color: #2e7d32;
+      }
+  
+      .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 18px;
+      }
+  
+      .carousel-btn.left {
+        left: 10px;
+      }
+  
+      .carousel-btn.right {
+        right: 10px;
+      }
+  
+      footer {
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+        padding: 15px;
+      }
+  
+      @media (max-width: 768px) {
+        .carousel-card {
+          padding: 20px;
+        }
+        nav a {
+          display: block;
+          margin: 10px 0;
+        }
+        .hero h2 {
+          font-size: 28px;
+        }
+        .hero p {
+          font-size: 16px;
+        }
+      }
+  
+      /* Responsive for small screens */
+      @media (max-width: 480px) {
+        .hero h2 {
+          font-size: 24px;
+        }
+  
+        .hero p {
+          font-size: 14px;
+        }
+  
+        .hero button {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+  
+        footer {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header and Navigation -->
+    <header>
+      <h1><a href="home.html">Welcome to My Website</a></h1>
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+  
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Your Success Starts Here</h2>
+      <p>We help businesses grow with professional digital solutions.</p>
+      <button onclick="window.location.href='contact.html'">Get Started</button>
+    </section>
+  
+    <main>
+      <!-- Carousel Section -->
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <section class="carousel-card">
+            <h2>Introduction</h2>
+            <p>Welcome to our website. We provide high-quality solutions tailored for your business.</p>
+          </section>
+          <section class="carousel-card">
+            <h2>Services</h2>
+            <ul style="list-style: none; padding: 0;">
+              <li>Web Development</li>
+              <li>SEO Optimization</li>
+              <li>Content Creation</li>
+            </ul>
+          </section>
+          <section class="carousel-card">
+            <h2>Testimonials</h2>
+            <blockquote style="font-style: italic;">"They delivered an amazing website! Highly recommend."</blockquote>
+            <cite style="display: block; margin-top: 10px;">- Happy Client</cite>
+          </section>
+        </div>
+        <button class="carousel-btn left" onclick="moveSlide(-1)">&#8592;</button>
+        <button class="carousel-btn right" onclick="moveSlide(1)">&#8594;</button>
+      </div>
+    </main>
+  
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2025 My Website</p>
+    </footer>
+  
+    <script>
+      let slideIndex = 0;
+  
+      function moveSlide(direction) {
+        const track = document.querySelector('.carousel-track');
+        const totalSlides = track.children.length;
+        slideIndex = (slideIndex + direction + totalSlides) % totalSlides;
+        track.style.transform = `translateX(-${slideIndex * 100}%)`;
+      }
+    </script>
+  </body>
+  </html>
+  
